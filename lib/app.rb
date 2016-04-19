@@ -1,8 +1,10 @@
 require 'sinatra/base'
+require 'sinatra'
 
 class BBC < Sinatra::Base
+
   get '/' do
-    'Hello BBC!'
+    erb :'index'
   end
 
   # start the server if ruby file executed directly
