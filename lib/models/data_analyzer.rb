@@ -1,13 +1,18 @@
 require './lib/models/api_request.rb'
+require 'singleton'
 
 class DataAnalyzer
+  include Singleton
 
   attr_accessor :letter, :page
 
-  def initialize(api_request = ApiRequest.new)
-    @api_request = api_request
+  def initialize
     @letter = :a
     @page = 1
+  end
+
+  def inject_api(api_request = ApiRequest.new)
+    @api_request = api_request
   end
 
   def get_programmes

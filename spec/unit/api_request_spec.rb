@@ -5,7 +5,7 @@ describe ApiRequest do
   subject(:api_request) {described_class.new}
 
   before(:example) do
-    file = File.join(File.dirname(__FILE__), '../api_response.json')
+    file = File.join(File.dirname(__FILE__), '../letter_a_page_1.json')
     json_file = File.read(file)
     @info = JSON.parse(json_file)
   end

@@ -22,4 +22,10 @@ feature 'Home page' do
     expect(page).to have_content "Abadas"
   end
 
+  scenario 'can search by a different letter' do
+    visit '/'
+    click_button 'B'
+    expect(page).to have_content "Baby Jake"
+  end
+
 end

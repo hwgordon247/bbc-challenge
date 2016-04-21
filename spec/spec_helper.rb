@@ -34,9 +34,17 @@ Capybara.app = BBC
 RSpec.configure do |config|
 
   config.before(:each) do
-    file = File.join(File.dirname(__FILE__), '/api_response.json')
+    file = File.join(File.dirname(__FILE__), '/letter_a_page_1.json')
     json_file = File.read(file)
     stub_request(:get, "https://ibl.api.bbci.co.uk/ibl/v1/atoz/a/programmes?page=1" ).
+      with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
+      to_return(status: 200, body: json_file, headers: {})
+  end
+
+  config.before(:each) do
+    file = File.join(File.dirname(__FILE__), '/letter_b_page_1.json')
+    json_file = File.read(file)
+    stub_request(:get, "https://ibl.api.bbci.co.uk/ibl/v1/atoz/b/programmes?page=1" ).
       with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
       to_return(status: 200, body: json_file, headers: {})
   end

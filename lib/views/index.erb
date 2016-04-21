@@ -7,3 +7,10 @@
 <% @programmes.each do |programme| %>
   <%= programme['title'] %> <br>
 <% end %>
+
+<% ("a".."z").each do |letter| %>
+  <form action="/letter" method="post">
+    <input type="hidden" name="letter" value="<%=letter%>" />
+    <button type="submit"> <%= letter.upcase %> </button>
+  </form>
+<% end %>
