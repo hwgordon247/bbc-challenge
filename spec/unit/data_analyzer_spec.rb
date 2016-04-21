@@ -17,7 +17,7 @@ describe DataAnalyzer do
   subject(:data_analyzer) {described_class.new(api_request)}
 
   it 'can get the relevant information from the api' do
-    expect(data_analyzer.get_programs("a", "1")).to eq @info
+    expect(data_analyzer.get_programs).to eq @info
   end
 
 end
