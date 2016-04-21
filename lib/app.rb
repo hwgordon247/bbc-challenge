@@ -11,6 +11,7 @@ class BBC < Sinatra::Base
   get '/' do
     @letter = @data_analyzer.letter
     @page = @data_analyzer.page
+    @programmes = @data_analyzer.get_programmes
     erb :'index'
   end
 

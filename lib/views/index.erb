@@ -2,3 +2,8 @@
 
 <h2> Current Program letter: <%= @letter.upcase %></h2>
 <h2> Current Program page: <%= @page %></h2>
+
+<h3> Programmes: </h3>
+<% @programmes.each do |programme| %>
+  <%= programme['title'] %> <br>
+<% end %>

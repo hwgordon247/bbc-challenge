@@ -10,8 +10,9 @@ class DataAnalyzer
     @page = 1
   end
 
-  def get_programs
-    @api_request.hit_api(@letter.to_s, @page.to_s)
+  def get_programmes
+    information = @api_request.hit_api(@letter.to_s, @page.to_s)
+    programmes = information['atoz_programmes']['elements']
   end
 
 end

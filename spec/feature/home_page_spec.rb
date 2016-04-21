@@ -16,4 +16,10 @@ feature 'Home page' do
     expect(page).to have_content "Current Program page: 1"
   end
 
+  scenario 'can list the relevant programs' do
+    visit '/'
+    expect(page).to have_content "Programmes:"
+    expect(page).to have_content "Abadas"
+  end
+
 end
