@@ -28,4 +28,17 @@ feature 'Home page' do
     expect(page).to have_content "Baby Jake"
   end
 
+  scenario 'can visit another page of programmes' do
+    visit '/'
+    click_button 'A'
+    click_button '2'
+    expect(page).to have_content "Alistair Cooke's America"
+  end
+
+  scenario 'can display total number of pages' do
+    visit '/'
+    click_button 'A'
+    expect(page).to have_content "Total Pages: 4"
+  end
+
 end

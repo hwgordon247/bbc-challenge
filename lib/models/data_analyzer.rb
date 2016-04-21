@@ -16,8 +16,13 @@ class DataAnalyzer
   end
 
   def get_programmes
-    information = @api_request.hit_api(@letter.to_s, @page.to_s)
-    programmes = information['atoz_programmes']['elements']
+    @information = @api_request.hit_api(@letter.to_s, @page.to_s)
+    programmes = @information['atoz_programmes']['elements']
+  end
+
+  def page_count
+    total_programmes = @information['atoz_programmes']['count']
+    @pages = (total_programmes.to_f/20).ceil
   end
 
 end

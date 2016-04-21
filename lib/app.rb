@@ -14,11 +14,18 @@ class BBC < Sinatra::Base
     @letter = @data_analyzer.letter
     @page = @data_analyzer.page
     @programmes = @data_analyzer.get_programmes
+    @page_count = @data_analyzer.page_count
     erb :'index'
   end
 
   post '/letter' do
     @data_analyzer.letter = params[:letter].to_sym
+    @data_analyzer.page = 1;
+    redirect '/'
+  end
+
+  post '/page' do
+    @data_analyzer.page = params[:page]
     redirect '/'
   end
 

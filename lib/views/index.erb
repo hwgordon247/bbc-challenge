@@ -14,3 +14,12 @@
     <button type="submit"> <%= letter.upcase %> </button>
   </form>
 <% end %>
+
+<h3> Total Pages: <%= @page_count %> </h3>
+
+<% (1..@page_count).each do |page| %>
+  <form action="/page" method="post">
+    <input type="hidden" name="page" value="<%=page%>" />
+    <button type="submit"> <%= page %> </button>
+  </form>
+<% end %>

@@ -24,4 +24,9 @@ describe DataAnalyzer do
     expect(data_analyzer.get_programmes).to eq @info['atoz_programmes']['elements']
   end
 
+  it 'can calculate the total number of pages' do
+    data_analyzer.get_programmes
+    expect(data_analyzer.page_count).to eq 4
+  end
+
 end

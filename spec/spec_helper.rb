@@ -49,6 +49,14 @@ RSpec.configure do |config|
       to_return(status: 200, body: json_file, headers: {})
   end
 
+  config.before(:each) do
+    file = File.join(File.dirname(__FILE__), '/letter_a_page_2.json')
+    json_file = File.read(file)
+    stub_request(:get, "https://ibl.api.bbci.co.uk/ibl/v1/atoz/a/programmes?page=2" ).
+      with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
+      to_return(status: 200, body: json_file, headers: {})
+  end
+
   config.include Capybara::DSL
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
