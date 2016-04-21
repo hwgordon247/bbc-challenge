@@ -11,4 +11,9 @@ feature 'Home page' do
     expect(page).to have_content "Current Program letter: A"
   end
 
+  scenario 'has current program page' do
+    visit '/'
+    expect(page).to have_content "Current Program page: 1"
+  end
+
 end
