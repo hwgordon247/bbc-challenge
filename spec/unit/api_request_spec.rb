@@ -11,7 +11,7 @@ describe ApiRequest do
   end
 
   it "can request information from the api" do
-    expect(api_request.hit_api('1','a')).to eq @info
+    expect(api_request.hit_api('a','1')).to eq @info
   end
 
 end

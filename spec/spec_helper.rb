@@ -36,7 +36,7 @@ RSpec.configure do |config|
   config.before(:each) do
     file = File.join(File.dirname(__FILE__), '/api_response.json')
     json_file = File.read(file)
-    stub_request(:get, /ibl.api.bbci.co.uk/).
+    stub_request(:get, "https://ibl.api.bbci.co.uk/ibl/v1/atoz/a/programmes?page=1" ).
       with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
       to_return(status: 200, body: json_file, headers: {})
   end
