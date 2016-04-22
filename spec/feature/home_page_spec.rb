@@ -6,17 +6,17 @@ feature 'Home page' do
     expect(page).to have_content "BBC Challenge"
   end
 
-  scenario 'has current program letter' do
+  scenario 'has current programme letter' do
     visit '/'
-    expect(page).to have_content "Current Program letter: A"
+    expect(page).to have_content "Current Programme letter: A"
   end
 
-  scenario 'has current program page' do
+  scenario 'has current programme page' do
     visit '/'
-    expect(page).to have_content "Current Program page: 1"
+    expect(page).to have_content "Current Programme page: 1"
   end
 
-  scenario 'can list the relevant programs' do
+  scenario 'can list the relevant programmes' do
     visit '/'
     expect(page).to have_content "Programmes:"
     expect(page).to have_content "Abadas"

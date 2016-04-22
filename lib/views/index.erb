@@ -10,8 +10,8 @@
 <body>
   <h1> BBC Challenge </h1>
 
-  <h2> Current Program letter: <%= @letter.upcase %></h2>
-  <h2> Current Program page: <%= @page %></h2>
+  <h2> Current Programme letter: <%= @letter.upcase %></h2>
+  <h2> Current Programme page: <%= @page %></h2>
 
   <% ("a".."z").each do |letter| %>
     <form action="/letter" method="post">
