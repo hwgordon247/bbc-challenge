@@ -1,4 +1,11 @@
 body {
-  font-family: AppleGothic, sans-serif;
-  background-color: green;
+  font-family: sans-serif;
+}
+
+.button_letter {
+  float: left;
+}
+
+.button_page {
+  float: left;
 }

@@ -13,25 +13,27 @@
   <h2> Current Program letter: <%= @letter.upcase %></h2>
   <h2> Current Program page: <%= @page %></h2>
 
+  <% ("a".."z").each do |letter| %>
+    <form action="/letter" method="post">
+      <input type="hidden" name="letter" value="<%=letter%>" />
+      <button class="button_letter" type="submit"> <%= letter.upcase %> </button>
+    </form>
+  <% end %>
+
+  <br>
   <h3> Programmes: </h3>
   <% @programmes.each do |programme| %>
     <%= programme['title'] %> <br>
   <% end %>
 
-  <% ("a".."z").each do |letter| %>
-    <form action="/letter" method="post">
-      <input type="hidden" name="letter" value="<%=letter%>" />
-      <button type="submit"> <%= letter.upcase %> </button>
+  <% (1..@page_count).each do |page| %>
+    <form action="/page" method="post">
+      <input type="hidden" name="page" value="<%=page%>" />
+      <button class="button_page" type="submit"> <%= page %> </button>
     </form>
   <% end %>
 
   <h3> Total Pages: <%= @page_count %> </h3>
 
-  <% (1..@page_count).each do |page| %>
-    <form action="/page" method="post">
-      <input type="hidden" name="page" value="<%=page%>" />
-      <button type="submit"> <%= page %> </button>
-    </form>
-  <% end %>
 </body>
 </html>
