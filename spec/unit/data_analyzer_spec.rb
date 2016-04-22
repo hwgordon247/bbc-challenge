@@ -21,7 +21,7 @@ describe DataAnalyzer do
   end
 
   it 'can get the relevant information from the api' do
-    expect(data_analyzer.get_programmes).to eq @info['atoz_programmes']['elements']
+    expect(data_analyzer.get_programmes).to include({"title"=>"Abadas", "image_url"=>"http://ichef.bbci.co.uk/images/ic/192x108/p017mqg6.jpg"})
   end
 
   it 'can calculate the total number of pages' do

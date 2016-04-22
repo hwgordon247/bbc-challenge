@@ -24,6 +24,8 @@
   <h3> Programmes: </h3>
   <% @programmes.each do |programme| %>
     <%= programme['title'] %> <br>
+    <img src="<%= programme['image_url'] %>">
+    <br>
   <% end %>
 
   <% (1..@page_count).each do |page| %>
