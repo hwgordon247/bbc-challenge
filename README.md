@@ -1,6 +1,6 @@
 ## Henry Gordon - BBC Challenge
 
-App url: https://git.heroku.com/protected-castle-72121.git
+App url: https://protected-castle-72121.herokuapp.com/
 
 To Run the application:
 
