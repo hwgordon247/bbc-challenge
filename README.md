@@ -1,4 +1,4 @@
-## Henry Gordon - BBC Challenge
+## BBC Challenge
 
 App url: https://protected-castle-72121.herokuapp.com/
 
