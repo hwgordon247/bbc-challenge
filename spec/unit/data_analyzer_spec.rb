@@ -20,7 +20,7 @@ describe DataAnalyzer do
     data_analyzer.inject_api(api_request)
   end
 
-  it 'can get the relevant information from the api' do
+  it 'can get the relevant information from the api and format it as required' do
     expect(data_analyzer.get_programmes).to include({"title"=>"Abadas", "image_url"=>"http://ichef.bbci.co.uk/images/ic/192x108/p017mqg6.jpg"})
   end
 
